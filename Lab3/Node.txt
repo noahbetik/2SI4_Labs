@@ -1,0 +1,16 @@
+package lab3;
+
+public class Node {
+	TNode tn;
+	Node next;
+	
+	public Node(TNode t, Node n) {
+		tn = t;
+		next = n;
+	}
+
+}
+// Noah Betik
+// 400246583
+// betikn
+// Mar 1 2021

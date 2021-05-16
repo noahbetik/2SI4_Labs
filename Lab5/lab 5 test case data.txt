@@ -1,0 +1,351 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+(Test1): Testing Constructor1: create an empty heap with random array size
+
+(Test1): Test passed for Constructor1: public MaxHeap(100) and methods: public int getSizeArr()  (+0.5)
+(Test1): Test passed for Constructor1: public MaxHeap(100) and methods: public int getSizeHeap()  (+0.5)
+
+(Test1): Test passed for Constructor1: public MaxHeap(81) and methods: public int getSizeArr()  (+0.5)
+(Test1): Test passed for Constructor1: public MaxHeap(81) and methods: public int getSizeHeap()  (+0.5)
+
+(Test1): Test passed for Constructor1: public MaxHeap(262144) and methods: public int getSizeArr()  (+0.5)
+(Test1): Test passed for Constructor1: public MaxHeap(262144) and methods: public int getSizeHeap()  (+0.5)
+
+Marks: 3.0/3.0
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+(Test2-3): Testing constructor 2 and toString()
+
+(test2) test with array containing no duplicates passed: Test for size 11  (+1.75)
+(test2) Input array: [36, 4061, -8822, 2143, -7008, -2910, -3180, 1643, 2706, 3054, -8747]
+(test2) Output array: [null, 4061, 3054, -2910, 2143, 2706, -8822, -3180, 36, 1643, -7008, -8747, null, null, null, null, null, null, null, null, null, null, null]
+
+(test2) test with array containing no duplicates passed: Test for size 12  (+1.75)
+(test2) Input array: [9935, -2144, -1317, -1553, 7190, 4497, -4621, -5855, 7321, -9232, 7826, 487]
+(test2) Output array: [null, 9935, 7826, 4497, 7190, 7321, 487, -4621, -5855, -2144, -9232, -1553, -1317, null, null, null, null, null, null, null, null, null, null, null, null]
+
+(test2) test with array containing no duplicates passed: Test for size 9  (+1.75)
+(test2) Input array: [-2470, -8582, 1810, -6846, 1516, 3587, 5597, -4443, 8172]
+(test2) Output array: [null, 8172, 5597, 3587, 1516, -6846, -2470, 1810, -8582, -4443, null, null, null, null, null, null, null, null, null]
+
+(test2) test with array containing no duplicates passed: Test for size 16  (+1.75)
+(test2) Input array: [2517, 3509, -6358, -9001, 4126, -463, 4553, 7560, 8386, 5184, -130, 4720, 9686, -3441, 9838, 1947]
+(test2) Output array: [null, 9838, 7560, 9686, 4553, 5184, 4720, 8386, 1947, 3509, 2517, -130, -6358, 4126, -3441, -463, -9001, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+
+(test2) test with array containing no duplicates passed: Test for size 8  (+1.75)
+(test2) Input array: [-2562, 6395, -255, -7907, -111, -6139, 583, 6069]
+(test2) Output array: [null, 6395, 6069, 583, -111, -2562, -6139, -255, -7907, null, null, null, null, null, null, null, null]
+
+(test3) test with array containing duplicates passed: Test for size 11  (+1.75)
+(test3) Input array: [-7322, -9582, -7002, -7681, -110, -110, -9359, -9359, -3309, 2802, 1295]
+(test3) Output array: [null, 2802, 1295, -110, -7002, -110, -7322, -9359, -9582, -9359, -7681, -3309, null, null, null, null, null, null, null, null, null, null, null]
+
+(test3) test with array containing duplicates passed: Test for size 12  (+1.75)
+(test3) Input array: [7320, 2777, -4644, -6785, -1505, 8256, 7320, 4113, 5475, 7854, 7730, 5475]
+(test3) Output array: [null, 8256, 7854, 7320, 4113, 7730, 5475, 7320, -6785, 2777, -1505, 5475, -4644, null, null, null, null, null, null, null, null, null, null, null, null]
+
+(test3) test with array containing duplicates passed: Test for size 9  (+1.75)
+(test3) Input array: [-991, 6666, 6932, 2715, 6666, 1029, 6666, -5981, 9816]
+(test3) Output array: [null, 9816, 6932, 6666, 6666, 2715, 1029, 6666, -5981, -991, null, null, null, null, null, null, null, null, null]
+
+(test3) test with array containing duplicates passed: Test for size 16  (+1.75)
+(test3) Input array: [244, -2478, 5551, 1802, -7445, -8366, -6500, 7619, -6500, 9230, -6500, 9469, 6148, -5985, -6988, 7878]
+(test3) Output array: [null, 9469, 7878, 9230, 7619, 5551, 6148, -5985, 1802, -6500, -7445, -6500, -8366, 244, -6500, -6988, -2478, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+
+(test3) test with array containing duplicates passed: Test for size 8  (+1.75)
+(test3) Input array: [-5470, -5724, 6956, 2847, 6956, -3735, 6956, -3980]
+(test3) Output array: [null, 6956, 6956, 6956, -3980, 2847, -5470, -3735, -5724, null, null, null, null, null, null, null, null]
+
+Marks: 17.5/17.5
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+(Test4-8): Testing insert() method
+
+(Test4): Insert duplicated values into the array
+(Test4): Original Heap: 9734,8753,6903,1265,5010,-9065,-3588,-361,-3162,-6351,-3387, x, x, x, x, x, x, x, x, x, x, x, x,
+(Test4): Original arrSize: 23
+(Test4): Original heapSize: 11
+
+(Test4): Insert: [5010, 6903, -3162]
+(Test4): Output array: 9734,8753,6903,1265,5010,6903,-3162,-361,-3162,-6351,-3387,-9065,5010,-3588, x, x, x, x, x, x, x, x, x,
+(Test4): arrSize after insert: 23
+(Test4): heapSize after insert: 14
+
+(Test4): HeapSize(14|14) is Correct  (+0.5)
+(Test4): Max heap test passed  (+1.0)
+
+------------------------------------------------
+(Test4): Insert duplicated values into the array
+(Test4): Original Heap: 9631,9202,8355,8905,8209,1554,268,-9801,161,-7989,6922,-4841, x, x, x, x, x, x, x, x, x, x, x, x, x,
+(Test4): Original arrSize: 25
+(Test4): Original heapSize: 12
+
+(Test4): Insert: [-4841, 161, -4841]
+(Test4): Output array: 9631,9202,8355,8905,8209,1554,268,-9801,161,-7989,6922,-4841,-4841,161,-4841, x, x, x, x, x, x, x, x, x, x,
+(Test4): arrSize after insert: 25
+(Test4): heapSize after insert: 15
+
+(Test4): HeapSize(15|15) is Correct  (+0.5)
+(Test4): Max heap test passed  (+1.0)
+
+------------------------------------------------
+(Test4): Insert duplicated values into the array
+(Test4): Original Heap: 5678,4261,5531,2492,2590,-7287,1108,-6157,-4917, x, x, x, x, x, x, x, x, x, x,
+(Test4): Original arrSize: 19
+(Test4): Original heapSize: 9
+
+(Test4): Insert: [-6157, -6157, -6157]
+(Test4): Output array: 5678,4261,5531,2492,2590,-6157,1108,-6157,-4917,-6157,-6157,-7287, x, x, x, x, x, x, x,
+(Test4): arrSize after insert: 19
+(Test4): heapSize after insert: 12
+
+(Test4): HeapSize(12|12) is Correct  (+0.5)
+(Test4): Max heap test passed  (+1.0)
+
+------------------------------------------------
+(Test5): Insert random (n > MAX) into the array
+(Test5): Original Heap: 9411,6915,2514,1361,5206,-3882,-8395,-7678,-1021,-3402,4079, x, x, x, x, x, x, x, x, x, x, x, x,
+(Test5): Original arrSize: 23
+(Test5): Original heapSize: 11
+
+(Test5): Insert: [9478, 9508, 9426]
+(Test5): Output array: 9508,6915,9478,1361,5206,9411,9426,-7678,-1021,-3402,4079,-3882,2514,-8395, x, x, x, x, x, x, x, x, x,
+(Test5): arrSize after insert: 23
+(Test5): heapSize after insert: 14
+
+(Test5): HeapSize(14|14) is Correct  (+0.5)
+(Test5): Max heap test passed  (+1.0)
+
+------------------------------------------------
+(Test5): Insert random (n > MAX) into the array
+(Test5): Original Heap: 3880,885,1426,380,794,-1052,-4150,-8396,-8301,-9155,-6527,-2849, x, x, x, x, x, x, x, x, x, x, x, x, x,
+(Test5): Original arrSize: 25
+(Test5): Original heapSize: 12
+
+(Test5): Insert: [3927, 3946, 3913]
+(Test5): Output array: 3946,885,3927,380,794,1426,3913,-8396,-8301,-9155,-6527,-2849,-1052,-4150,3880, x, x, x, x, x, x, x, x, x, x,
+(Test5): arrSize after insert: 25
+(Test5): heapSize after insert: 15
+
+(Test5): HeapSize(15|15) is Correct  (+0.5)
+(Test5): Max heap test passed  (+1.0)
+
+------------------------------------------------
+(Test5): Insert random (n > MAX) into the array
+(Test5): Original Heap: 9049,8462,2603,5336,2292,-3348,-5762,371,4583, x, x, x, x, x, x, x, x, x, x,
+(Test5): Original arrSize: 19
+(Test5): Original heapSize: 9
+
+(Test5): Insert: [9136, 9128, 9124]
+(Test5): Output array: 9136,9128,9124,5336,9049,2603,-5762,371,4583,2292,8462,-3348, x, x, x, x, x, x, x,
+(Test5): arrSize after insert: 19
+(Test5): heapSize after insert: 12
+
+(Test5): HeapSize(12|12) is Correct  (+0.5)
+(Test5): Max heap test passed  (+1.0)
+
+------------------------------------------------
+(Test6): Insert random (n < MIN) into the array
+(Test6): Original Heap: 6128,5548,4767,3275,1857,2007,-6568,-8042,1918,-7874,-6161, x, x, x, x, x, x, x, x, x, x, x, x,
+(Test6): Original arrSize: 23
+(Test6): Original heapSize: 11
+
+(Test6): Insert: [-8058, -8117, -8087]
+(Test6): Output array: 6128,5548,4767,3275,1857,2007,-6568,-8042,1918,-7874,-6161,-8058,-8117,-8087, x, x, x, x, x, x, x, x, x,
+(Test6): arrSize after insert: 23
+(Test6): heapSize after insert: 14
+
+(Test6): HeapSize(14|14) is Correct  (+0.5)
+(Test6): Max heap test passed  (+1.0)
+
+------------------------------------------------
+(Test6): Insert random (n < MIN) into the array
+(Test6): Original Heap: 9439,3740,8591,187,-888,-6757,8109,-2567,151,-6095,-6339,-8517, x, x, x, x, x, x, x, x, x, x, x, x, x,
+(Test6): Original arrSize: 25
+(Test6): Original heapSize: 12
+
+(Test6): Insert: [-8605, -8528, -8575]
+(Test6): Output array: 9439,3740,8591,187,-888,-6757,8109,-2567,151,-6095,-6339,-8517,-8605,-8528,-8575, x, x, x, x, x, x, x, x, x, x,
+(Test6): arrSize after insert: 25
+(Test6): heapSize after insert: 15
+
+(Test6): HeapSize(15|15) is Correct  (+0.5)
+(Test6): Max heap test passed  (+1.0)
+
+------------------------------------------------
+(Test6): Insert random (n < MIN) into the array
+(Test6): Original Heap: 4893,3767,3682,-818,-8507,-630,561,-8611,-6380, x, x, x, x, x, x, x, x, x, x,
+(Test6): Original arrSize: 19
+(Test6): Original heapSize: 9
+
+(Test6): Insert: [-8611, -8690, -8670]
+(Test6): Output array: 4893,3767,3682,-818,-8507,-630,561,-8611,-6380,-8611,-8690,-8670, x, x, x, x, x, x, x,
+(Test6): arrSize after insert: 19
+(Test6): heapSize after insert: 12
+
+(Test6): HeapSize(12|12) is Correct  (+0.5)
+(Test6): Max heap test passed  (+1.0)
+
+------------------------------------------------
+(Test7): Insert random (MIN < n < MAX) into the array
+(Test7): Original Heap: 9497,8526,8611,838,6225,-3711,-3082,578,-2369,-9052,922, x, x, x, x, x, x, x, x, x, x, x, x,
+(Test7): Original arrSize: 23
+(Test7): Original heapSize: 11
+
+(Test7): Insert: [-7420, 8033, -6852]
+(Test7): Output array: 9497,8526,8611,838,6225,8033,-3082,578,-2369,-9052,922,-7420,-3711,-6852, x, x, x, x, x, x, x, x, x,
+(Test7): arrSize after insert: 23
+(Test7): heapSize after insert: 14
+
+(Test7): HeapSize(14|14) is Correct  (+0.5)
+(Test7): Max heap test passed  (+1.0)
+
+------------------------------------------------
+(Test7): Insert random (MIN < n < MAX) into the array
+(Test7): Original Heap: 9708,7756,7999,4464,3518,2895,2675,-8823,905,-7188,-3729,-3998, x, x, x, x, x, x, x, x, x, x, x, x, x,
+(Test7): Original arrSize: 25
+(Test7): Original heapSize: 12
+
+(Test7): Insert: [1723, -7315, 2163]
+(Test7): Output array: 9708,7756,7999,4464,3518,2895,2675,-8823,905,-7188,-3729,-3998,1723,-7315,2163, x, x, x, x, x, x, x, x, x, x,
+(Test7): arrSize after insert: 25
+(Test7): heapSize after insert: 15
+
+(Test7): HeapSize(15|15) is Correct  (+0.5)
+(Test7): Max heap test passed  (+1.0)
+
+------------------------------------------------
+(Test7): Insert random (MIN < n < MAX) into the array
+(Test7): Original Heap: 8152,7113,8113,308,4,2558,5115,-8518,-6185, x, x, x, x, x, x, x, x, x, x,
+(Test7): Original arrSize: 19
+(Test7): Original heapSize: 9
+
+(Test7): Insert: [-1955, 1057, 5440]
+(Test7): Output array: 8152,7113,8113,308,1057,5440,5115,-8518,-6185,-1955,4,2558, x, x, x, x, x, x, x,
+(Test7): arrSize after insert: 19
+(Test7): heapSize after insert: 12
+
+(Test7): HeapSize(12|12) is Correct  (+0.5)
+(Test7): Max heap test passed  (+1.0)
+
+------------------------------------------------
+(Test8): Insert random n into a full array
+(Test8): Original Heap: 8862,7504,7525,-5367,-1519,-9487,97,-9960,-7649,-6302,-4905, x, x, x, x, x, x, x, x, x, x, x, x,
+(Test8): Original arrSize: 23
+(Test8): Original heapSize: 11
+
+(Test8): Insert: [8894, 6793, 303, 1934, 929, 3344, 5308, 6313, 8531, 2269, 2597, 4225, 6517, 8312, 6615]
+(Test8): Output array: 8894,8531,8862,6313,7504,8312,1934,929,5308,2269,4225,7525,6793,97,303,-9960,-5367,-7649,3344,-6302,-1519,-4905,2597,-9487,6517,6615, x, x, x, x, x, x, x, x, x, x, x, x, x, x, x, x, x, x, x, x,
+(Test8): arrSize after insert: 46
+(Test8): heapSize after insert: 26
+
+(Test8): HeapSize(26|26) is Correct  (+0.5)
+(Test8): Max heap test passed  (+1.0)
+
+------------------------------------------------
+(Test8): Insert random n into a full array
+(Test8): Original Heap: 9018,6536,4742,6132,4135,4333,3453,-1671,3545,-4686,-3672,-9215, x, x, x, x, x, x, x, x, x, x, x, x, x,
+(Test8): Original arrSize: 25
+(Test8): Original heapSize: 12
+
+(Test8): Insert: [5650, 3485, 9522, 1700, 2697, 4786, 2804, 4106, 7776, 6534, 3213, 2170, 6192, 2184, 9726, 4074]
+(Test8): Output array: 9726,7776,9522,6132,6536,9018,5650,2697,4786,4135,6534,4742,6192,4074,3485,-1671,1700,3545,2804,-4686,4106,-3672,3213,-9215,2170,2184,4333,3453, x, x, x, x, x, x, x, x, x, x, x, x, x, x, x, x, x, x, x, x, x, x,
+(Test8): arrSize after insert: 50
+(Test8): heapSize after insert: 28
+
+(Test8): HeapSize(28|28) is Correct  (+0.5)
+(Test8): Max heap test passed  (+1.0)
+
+------------------------------------------------
+(Test8): Insert random n into a full array
+(Test8): Original Heap: 9227,4724,8698,3231,-3089,299,493,-2163,274, x, x, x, x, x, x, x, x, x, x,
+(Test8): Original arrSize: 19
+(Test8): Original heapSize: 9
+
+(Test8): Insert: [4176, 1229, 9400, 7930, 9855, 7677, 9785, 455, 8384, 7414, 4662, 641, 3034]
+(Test8): Output array: 9855,9785,9400,8384,4662,8698,9227,3231,7414,4176,3034,299,7930,493,7677,-2163,455,274,4724,-3089,641,1229, x, x, x, x, x, x, x, x, x, x, x, x, x, x, x, x,
+(Test8): arrSize after insert: 38
+(Test8): heapSize after insert: 22
+
+(Test8): HeapSize(22|22) is Correct  (+0.5)
+(Test8): Max heap test passed  (+1.0)
+
+------------------------------------------------
+Marks: 22.5/22.5
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+(test9) Test toString, represent this.heap in level order
+
+(Test9): Your MaxHeap is [null, 8176, 7489, 6152, 1114, 5178, -3853, 1190, -9779, 563, -9542, 2566, null, null, null, null, null, null, null, null, null, null, null]
+(Test9): Expected MaxHeap String is: 8176,7489,6152,1114,5178,-3853,1190,-9779,563,-9542,2566,
+(Test9): Output MaxHeap String is 8176,7489,6152,1114,5178,-3853,1190,-9779,563,-9542,2566,
+(Test9): toSring() is Correct  (+1.0)
+
+(Test9): Your MaxHeap is [null, 9596, 9299, 9356, -4451, 7714, 5552, 3932, -7895, -8916, 2948, 3795, -4224, null, null, null, null, null, null, null, null, null, null, null, null]
+(Test9): Expected MaxHeap String is: 9596,9299,9356,-4451,7714,5552,3932,-7895,-8916,2948,3795,-4224,
+(Test9): Output MaxHeap String is 9596,9299,9356,-4451,7714,5552,3932,-7895,-8916,2948,3795,-4224,
+(Test9): toSring() is Correct  (+1.0)
+
+Marks: 2.0/2.0
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+(Test10-11): Testing heapsort method
+
+(test10): Apply heapsort on a array with no duplicate values
+(test10): Input Array is [372174, 374138, 745075, -917713, 663470, 885040, -210758, 415635, -491090, 325862, -567548]
+(test10): Output Array is [885040, 745075, 663470, 415635, 374138, 372174, 325862, -210758, -491090, -567548, -917713]
+(test10): heapsort test with size 11 passed.  (+1)
+
+(test10): Apply heapsort on a array with no duplicate values
+(test10): Input Array is [-79508, -339239, -435070, -269869, -544840, -360961, -556045, 365748, 277810, -76499, 382872, 395821]
+(test10): Output Array is [395821, 382872, 365748, 277810, -76499, -79508, -269869, -339239, -360961, -435070, -544840, -556045]
+(test10): heapsort test with size 12 passed.  (+1)
+
+(test10): Apply heapsort on a array with no duplicate values
+(test10): Input Array is [822571, -847154, -810072, 91830, 163419, 220373, 803702, 617073, -821821]
+(test10): Output Array is [822571, 803702, 617073, 220373, 163419, 91830, -810072, -821821, -847154]
+(test10): heapsort test with size 9 passed.  (+1)
+
+(test10): Apply heapsort on a array with no duplicate values
+(test10): Input Array is [91287, -940878, -181952, -606047, -672115, 518000, -778184, -167391, 200711, 675930, 865070, -163310, -351057, 526782, -867804, 634576]
+(test10): Output Array is [865070, 675930, 634576, 526782, 518000, 200711, 91287, -163310, -167391, -181952, -351057, -606047, -672115, -778184, -867804, -940878]
+(test10): heapsort test with size 16 passed.  (+1)
+
+(test10): Apply heapsort on a array with no duplicate values
+(test10): Input Array is [-254452, 752130, 77052, -780186, 690356, 628027, 845307, 691122]
+(test10): Output Array is [845307, 752130, 691122, 690356, 628027, 77052, -254452, -780186]
+(test10): heapsort test with size 8 passed.  (+1)
+
+(test11): Apply heapsort on a array with duplicate values
+(test11): Input Array is [-572341, 167856, -344199, -300307, 908415, -300307, 380049, -244549, -326524, -237612, -478732]
+(test11): Output Array is [908415, 380049, 167856, -237612, -244549, -300307, -300307, -326524, -344199, -478732, -572341]
+(test11): heapsort test with size 11 passed.  (+1)
+
+(test11): Apply heapsort on a array with duplicate values
+(test11): Input Array is [956216, 625533, -552363, -900842, -380128, -398175, 625533, -975564, -173024, -290004, -770229, -173024]
+(test11): Output Array is [956216, 625533, 625533, -173024, -173024, -290004, -380128, -398175, -552363, -770229, -900842, -975564]
+(test11): heapsort test with size 12 passed.  (+1)
+
+(test11): Apply heapsort on a array with duplicate values
+(test11): Input Array is [95440, -124819, -768589, 692069, -124819, 430907, -687433, 471212, 246442]
+(test11): Output Array is [692069, 471212, 430907, 246442, 95440, -124819, -124819, -687433, -768589]
+(test11): heapsort test with size 9 passed.  (+1)
+
+(test11): Apply heapsort on a array with duplicate values
+(test11): Input Array is [699997, -910529, -136040, 68587, -215205, 489246, -60147, 209973, 699997, -797853, 699997, -644689, -220500, -121981, -420629, -336836]
+(test11): Output Array is [699997, 699997, 699997, 489246, 209973, 68587, -60147, -121981, -136040, -215205, -220500, -336836, -420629, -644689, -797853, -910529]
+(test11): heapsort test with size 16 passed.  (+1)
+
+(test11): Apply heapsort on a array with duplicate values
+(test11): Input Array is [-259869, 533214, 980056, -880343, 980056, 259928, -516011, -516011]
+(test11): Output Array is [980056, 980056, 533214, 259928, -259869, -516011, -516011, -880343]
+(test11): heapsort test with size 8 passed.  (+1)
+
+Marks: 15.0/15.0
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Total Marks = 60.0/60.0

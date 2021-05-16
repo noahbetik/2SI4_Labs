@@ -1,0 +1,203 @@
+public class HugeInteger {
+	
+	private int[] digits;
+	private int sign = 0;
+	private int size;
+	
+	public HugeInteger(String val) {
+		try {
+			this.size = val.length();
+			
+			if (val.charAt(0) == '-') { // if the string contains a negative sign, update the sign field accordingly
+				this.digits = new int[this.size - 1]; // also decrease the size since the length of the string includes the negative sign
+				this.sign = -1;
+				this.size--;
+				
+				
+				for (int n = 1; n<this.size+1; n++) {
+					char x = val.charAt(n);
+					try {
+						int here = Integer.parseInt(String.valueOf(x)); // populate the integer array
+						this.digits[n-1] = here;
+					}
+					catch(NumberFormatException nfe) {
+						throw new NumberFormatException("String must only contain numerals after an optional negative sign");
+					}
+				}
+				
+				if(this.size == 1 && this.digits[0] == 0) {
+					this.sign = 1;
+				} // zero should be positive
+			
+			}
+			
+			else { // populate the array and fields if the string was positive
+				this.sign = 1;
+				this.digits = new int[this.size];
+				for (int n = 0; n<this.size; n++) {
+					char x = val.charAt(n);
+					try {
+						int here = Integer.parseInt(String.valueOf(x)); 
+						this.digits[n] = here;
+					}
+					catch(NumberFormatException nfe) {
+						throw new NumberFormatException("String must only contain numerals after an optional negative sign");
+					}
+				}	
+			}
+			
+			while(this.digits[0] == 0 && this.size > 1) { // if there are extra zeroes at the front, remove them and shift digits
+				for(int index = 0; index<this.size-1; index++) {
+					this.digits[index] = this.digits[index+1];
+				}
+				this.size--; // update size accordingly
+			}
+		}
+		
+		catch (IllegalArgumentException e){
+			throw new IllegalArgumentException("Please enter a string of decimal digits");
+		}
+	}
+	
+	public int[] getDigits() { // getter method for digits
+		return this.digits;
+	}
+	
+	public int getSize() { // getter method for size of number (number of digits)
+		return this.size;
+	}
+	
+	public int getSign() { // getter method for sign of number
+		return this.sign;
+	}
+	
+	public HugeInteger(int n) {	
+		if (n <= 0) { // can't have a zero or negative number of digits
+			throw new IllegalArgumentException("Size of HugeInteger cannot be negative or zero");
+		}
+		
+		this.size = n;
+		this.digits = new int[n]; 
+		// first number cannot be zero
+		this.digits[0] = (int)(Math.random() * (9 - 1 + 1) + 1); // Math.random() * (max - min + 1) + min 
+		for (int len = 1; len<n; len++) {
+			int rng = (int)(Math.random() * (9 - 0 + 1) + 0); // formula for random integer in a range
+			this.digits[len] = rng;
+		} 
+		this.sign = (int)(Math.random() * (1 - 1 + 1) + 1); // randomize the sign
+	}
+	
+	public HugeInteger(int[] d) { // bonus constructor to create a HugeInteger from a list of digits
+		this.size = d.length;
+		this.sign = 1;
+		this.digits = d;
+	}
+	
+	public HugeInteger add(HugeInteger h) {
+		int large; // sizes of larger & smaller numbers
+		int small;
+		HugeInteger longest; // references to larger and smaller numbers
+		HugeInteger shortest;
+		
+		if(this.size == h.size || this.size > h.size) {
+			large = this.size;
+			small = h.size;
+			longest = this;
+			shortest = h;
+		}
+		
+		else {
+			large = h.size;
+			small = this.size;
+			longest = h;
+			shortest = this;
+		}
+		
+		if (this.sign == 1 && h.sign == -1) { // outsource this operation to the subtract function
+			HugeInteger flip = h;
+			flip.sign = 1;
+			return this.subtract(flip);
+		}
+		
+		else if (this.sign == -1 && h.sign == 1) { // outsource this operation to the subtract function
+			HugeInteger flip = this;
+			flip.sign = 1;
+			return h.subtract(flip);
+		} 
+		
+		HugeInteger sum = new HugeInteger(large+1); // create the HugeInteger with size one larger than largest number in case of end carry
+		
+		int i = large-1, j = small-1;
+		int index = sum.size;
+		int carry = 0;
+		
+		while(i>=0 && j>=0) { // add digits when both lists have digits
+			sum.digits[index-1] = longest.digits[i] + shortest.digits[j] + carry;
+			carry = 0;
+			
+			if  (sum.digits[index-1] > 9) { // carry mechanism
+				sum.digits[index-1] -= 10;
+				carry = 1;
+			}
+			
+			index--;
+			i--;
+			j--;
+		}
+		
+		while (i>=0 && index >= 0) { // add digits while only the largest number has digits
+			sum.digits[index-1] = longest.digits[i] + carry;
+			carry = 0;
+			if  (sum.digits[index-1] > 9) {
+				sum.digits[index-1] -= 10;
+				carry = 1;
+			}
+			index--;
+			i--;
+		}
+		
+		if(index == 1 && carry == 1) { // end carry
+			sum.digits[0] = 1;
+		}
+		
+		else if (index == 1 && carry == 0) { // no end carry
+			sum.digits[0] = 0;
+			index--;
+			int[] actualDigits = new int[large];
+			for (int k=0; k<large; k++) {
+				actualDigits[k] = sum.digits[k+1];
+			}
+			sum.digits = actualDigits;
+			sum.size -= 1;
+		}
+		
+		if (h.sign == -1 && this.sign == -1) { // assign sign based on operands' sign
+			sum.sign = -1;
+		}
+		
+		else {
+			sum.sign = 1;
+			}
+		
+		
+		return sum;	
+	}
+
+	public String toString() {
+		String result = new String();
+		if (sign == -1) {
+			result += "-";
+		}
+		
+		for (int i=0; i<this.size; i++) {
+			result += this.digits[i];
+		}
+		
+		return result;
+	}
+
+}
+
+//Noah Betik
+//400246583
+//Jan 25, 2021 @ 4:25PM
